@@ -1,5 +1,5 @@
 import express from 'express'
-import router from './src/routes/routes.js'
+import router from './routes/routes.js'
 import cors from 'cors'
 
 const app = express()
@@ -8,7 +8,7 @@ const app = express()
 app.use(cors())
 
 // Settings
-const port = 3000
+const port = process.env.PORT || 3000
 
 // middlewares
 app.use(express.json())
@@ -17,7 +17,7 @@ app.use(express.json())
 app.use('/api/v1', router)
 
 // static files
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello World! soy cesar')
 })
 app.listen(port, () => {
