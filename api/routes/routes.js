@@ -10,8 +10,4 @@ router.use('/products', products)
 router.use('/categories', categories)
 router.use('/users', users)
 
-router.get('/', (req, res) => {
-  res.send('Hello World! soy cesar perros')
-})
-
 export default router
