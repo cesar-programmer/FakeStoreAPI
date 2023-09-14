@@ -78,6 +78,16 @@ class ProductService {
     const deletedProduct = this.products[productIndex]
     return deletedProduct
   }
+
+  async findCategories () {
+    const categories = this.products.map((product) => product.category)
+    return [...new Set(categories)]
+  }
+
+  async findProductsCategory (name) {
+    const products = this.products.filter((product) => product.category === name)
+    return products
+  }
 }
 
 export default ProductService
