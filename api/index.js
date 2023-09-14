@@ -14,11 +14,11 @@ const port = process.env.PORT || 3000
 app.use(express.json())
 
 // routes
-app.use('api/v1', router)
+app.use('/api/v1', router)
 
 // static files
 app.get('/api', (req, res) => {
-  res.send('Hello World! soy cesar')
+  res.send('Hello World! soy cesar perros')
 })
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
